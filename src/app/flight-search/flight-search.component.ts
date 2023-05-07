@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Flight } from '../flight';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { FlightService } from '../flight.service';
  
 @Component({
   selector: 'app-flight-search',
@@ -19,30 +19,20 @@ export class FlightSearchComponent implements OnInit {
   };
   date: string =(new Date()).toISOString();
 
-  constructor(private http: HttpClient) {
-    console.debug("date in father constructor", this.date)
-   }
+  constructor(private flightService: FlightService) {
+  }
 
   ngOnInit(): void {
     console.debug("date in father ngOnInit", this.date);
   }
 
   search(): void {
-    const url = 'http://demo.angulararchitects.io/api/flight';
-
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json');
-    
-    const params = new HttpParams()
-      .set('from', this.from)
-      .set('to', this.to);
-
-    this.http.get<Flight[]>(url, {headers, params}).subscribe({
-      next: (flights) =>{
+    this.flightService.find(this.from, this.to).subscribe({
+      next: (flights) => {
         this.flights = flights;
       },
-      error: (err) =>{
-        console.error('Error', err);
+      error: (err) => {
+        console.debug('Error', err);
       }
     });
   }
