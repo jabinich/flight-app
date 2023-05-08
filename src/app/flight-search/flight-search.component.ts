@@ -18,6 +18,7 @@ export class FlightSearchComponent implements OnInit {
     5: true
   };
   date: string =(new Date()).toISOString();
+  delayFilter = false;
 
   constructor(private flightService: FlightService) {
   }

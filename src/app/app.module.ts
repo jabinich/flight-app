@@ -10,6 +10,7 @@ import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { FlightCardComponent } from './flight-card/flight-card.component';
 import { DateComponent } from './date/date.component';
 import { CityPipe } from './city.pipe';
+import { StatusFilterPipe } from './status-filter.pipe';
 
 @NgModule({
    imports: [
@@ -24,7 +25,8 @@ import { CityPipe } from './city.pipe';
       FlightSearchComponent,
       FlightCardComponent,
       DateComponent,
-      CityPipe
+      CityPipe,
+      StatusFilterPipe
    ],
    providers: [],
    bootstrap: [
