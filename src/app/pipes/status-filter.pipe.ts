@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Flight } from '../flight';
 
 @Pipe({
-  name: 'statusFilter'
+  name: 'statusFilter',
+  pure: true
 })
 export class StatusFilterPipe implements PipeTransform {
 
