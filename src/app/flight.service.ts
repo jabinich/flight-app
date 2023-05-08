@@ -9,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root', //der Scope des Service
-  //useClass: DefaultFlightService
+  useClass: DefaultFlightService
   //useClass: DummyFlightService
   //useValue: flightServiceObject
-  useFactory: createFlightService,
-  deps: [HttpClient]
+  //useFactory: createFlightService,
+  //deps: [HttpClient]
 })
 
 //Klasse als abstrakt kennzeichnen
