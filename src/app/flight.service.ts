@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { DefaultFlightService } from './default-flight.service';
 import { DummyFlightService } from './dummy-flight.service';
 import { flightServiceObject } from './flight-service-object';
-import { createFlightService } from './flight-service-actory';
+import { createFlightService } from './flight-service-factory';
 import { Flight } from './flight';
 import { HttpClient } from '@angular/common/http';
 
