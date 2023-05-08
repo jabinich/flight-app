@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { FlightCardComponent } from './flight-card/flight-card.component';
 import { DateComponent } from './date/date.component';
+import { CityPipe } from './city.pipe';
 
 @NgModule({
    imports: [
@@ -22,7 +23,8 @@ import { DateComponent } from './date/date.component';
       NavbarComponent,
       FlightSearchComponent,
       FlightCardComponent,
-      DateComponent
+      DateComponent,
+      CityPipe
    ],
    providers: [],
    bootstrap: [
