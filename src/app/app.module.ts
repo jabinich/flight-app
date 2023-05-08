@@ -9,8 +9,8 @@ import { AppComponent } from './app.component';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { FlightCardComponent } from './flight-card/flight-card.component';
 import { DateComponent } from './date/date.component';
-import { CityPipe } from './city.pipe';
-import { StatusFilterPipe } from './status-filter.pipe';
+import { CityPipe } from './pipes/city.pipe';
+import { StatusFilterPipe } from './pipes/status-filter.pipe';
 
 @NgModule({
    imports: [
