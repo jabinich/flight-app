@@ -1,33 +1,27 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { OnDestroy, Pipe, PipeTransform } from '@angular/core';
+import { CityService } from '../city.service';
 
 @Pipe({
   name: 'city',
   pure: true
 })
-export class CityPipe implements PipeTransform {
+export class CityPipe implements PipeTransform, OnDestroy {
+
+  constructor(private cityService: CityService){
+
+  }
+
+  //Aufräumarbeiten mit ngOnDestroy
+  ngOnDestroy(): void {
+    console.debug('Ich nehme den Hut und sage Adieu!');
+  }
 
   transform(value: string | undefined, format: 'long' | 'short'): string | undefined {
-    let short;
-    let long;
-
-    switch(value){
-      case 'Graz':
-        short = 'GRZ';
-        long = 'Flughafen Graz Thalerhof';
-        break;
-      case 'Hamburg':
-        short = 'HAM';
-        long = 'Airport Hamburg Helmut Schmidt';
-        break;
-      default:
-        short = long = value;
+    if (typeof value === 'undefined'){
+      return value;
     }
 
-    if (format === 'long'){
-      return long;
-    }
-
-    return short;
+    return this.cityService.formatName(value, format);
   }
 
 }
