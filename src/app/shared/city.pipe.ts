@@ -1,5 +1,5 @@
 import { OnDestroy, Pipe, PipeTransform } from '@angular/core';
-import { CityService } from '../city.service';
+import { CityService } from './city.service';
 
 @Pipe({
   name: 'city',

@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Flight } from './flight';
 import { FlightService } from './flight.service';
-import { BASE_URL } from './tokens';
+import { BASE_URL } from '../tokens';
 
 @Injectable({
   providedIn: 'root'
