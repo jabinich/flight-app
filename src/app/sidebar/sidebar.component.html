@@ -28,15 +28,18 @@
           </a>
         </li>
         <li routerLinkActive="active">
-            <a>
+            <!-- <a [routerLink]="[{outlets: {aux: 'basket'}}]">
                 <p>Basket</p>
-            </a>
+            </a> -->
+            <a [routerLink]="[{outlets: {primary: 'flight-booking/flight-search', aux: 'basket'}}]">
+              <p>Basket</p>
+          </a>
         </li>
-        <li routerLinkActive="active">
+        <!-- <li routerLinkActive="active">
             <a>
                 <p>Hide Basket</p>
             </a>
-        </li>
+        </li> -->
       </ul>
   </div>
   
